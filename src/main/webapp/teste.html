@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cadastro de Cliente</title>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-resource.js"></script>
+<script type="text/javascript" src="app/cliente/app.js"></script>
+<script type="text/javascript" src="app/cliente/general.controller.js"></script>
+<script type="text/javascript" src="app/cliente/cliente.service.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="clienteApp" ng-controller="GeneralController">
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Cadastro de Cliente</div>
+		<div class="panel-body">
+
+			<form class="col-md-4" ng-submit="saveCliente()">
+				<div class="form-group">
+					<label for="clienteNome">Nome: </label> <input type="text"
+						ng-model="cliente.nome" class="form-control" id="ClienteNome"
+						placeholder="Cliente Nome">
+				</div>
+				<div class="form-group">
+					<label for="clienteCpf">Cpf:</label> <input type="text"
+						ng-model="cliente.cpf" class="form-control" id="clienteCpf"
+						placeholder="Cpf">
+				</div>
+				
+				<div class="form-group">
+					<label for="clienteData">Data de Nascimento:</label> <input
+						type="date" ng-model="cliente.data" class="form-control"
+						id="clienteData" placeholder="Data de Nascimento">
+				</div>				
+				
+
+				<div class="form-group">
+					<label for="clienteLogradouro">Logradouro:</label> <input
+						type="text" ng-model="cliente.logradouro" class="form-control"
+						id="clienteLogradouro" placeholder="Logradouro">
+				</div>
+				 
+				<div class="form-group">
+					<label for="clienteTelefone">Telefone:</label> <input type="text"
+						ng-model="cliente.telefone" class="form-control"
+						id="clienteTelefone" placeholder="Telefone">
+				</div>
+
+				<div class="form-group">
+					<label for="clienteEmail">Email:</label> <input type="email"
+						ng-model="cliente.email" class="form-control" id="clienteEmail"
+						placeholder="Email">
+				</div>
+				<button type="submit" class="btn btn-default">{{buttonText}}</button>
+			</form>
+			<br>
+			
+			<div class="table-responsive col-md-6">
+				<table class="table table-striped">
+					<tr>
+						<th>Nome</th>
+						<th>Cpf</th>
+						<th>Data de Nascimento</th>
+						<th>Logradouro</th>
+						<th>Telefone</th>
+						<th>Email</th>
+						<th>Ação</th>						
+					</tr>
+					<tr ng-repeat="cliente in clientes">
+						<td>{{cliente.nome}}</td>
+						<td>{{cliente.cpf}}</td>
+						<td>{{cliente.data}}</td>
+						<td>{{cliente.logradouro}}</td>
+						<td>{{cliente.telefone}}</td>
+						<td>{{cliente.email}}</td>
+						<td>
+							<!--  					 
+							<button type="button" class="btn btn-default"
+								ng-click="updateClienteInit(cliente)">
+								<span class="btn btn-primary" aria-hidden="true">Salvar</span>
+							</button>
+							<button type="button" class="btn btn-default"
+								ng-click="deleteCliente(cliente)">
+								<span class="btn btn-primary"
+									aria-hidden="true">Excluir</span>							 
+							</button>
+							-->
+							  
+							
+							
+						</td>
+					</tr>
+				</table>
+			</div>			
+			
+		</div>
+	</div>
+
+</body>
+</html>
